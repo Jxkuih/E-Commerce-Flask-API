@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Flasky - Login{% endblock %}
+
+{% block page_content %}
+<div class="page-header"> <h1>Login</h1>
+</div>
+<div class="col-md-4">
+    {{ wtf.quick_form(form) }}
+    <p>
+        New user?
+        <a href="{{ url_for('auth.register') }}"> Click here to register
+        </a> 
+    </p>
+</div>
+{% endblock %}
+
+
+<-------->
+
+
+
+
+{% block page_content %}
+    <div class="container">
+        <div class="form-group">
+            {{ form.product_name.label }}
+                {{ form.product_name}}
+        </div>
+
+
+        <div class="form-group">
+            {{ form.product_description.label }}
+                {{ form.product_description}}
+        </div>
+        
+
+        <div class="form-group">
+            {{ form.price.label }}
+                {{ form.price}}
+        </div>
+
+
+        <div class="form-group">
+            {{ product_quantity }}
+                {{ form.product_quantity}}
+        </div>
+
+
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+
+    </div>
+{% endblock %}
